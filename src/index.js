@@ -616,6 +616,12 @@ class PhoneInput extends React.Component {
     const currentSelectedCountry = this.state.selectedCountry;
     const newSelectedCountry = this.state.onlyCountries.find(o => o == country);
     if (!newSelectedCountry) return;
+    if (currentSelectedCountry === newSelectedCountry) {
+      this.setState({
+        showDropdown: false
+      })
+      return
+    }
 
     const unformattedNumber = this.state.formattedNumber.replace(' ', '').replace('(', '').replace(')', '').replace('-', '');
     const newNumber = unformattedNumber.length > 1 ? unformattedNumber.replace(currentSelectedCountry.dialCode, newSelectedCountry.dialCode) : newSelectedCountry.dialCode;
