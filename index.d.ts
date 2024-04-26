@@ -1,4 +1,4 @@
-declare module "react-phone-input-2" {
+declare module "react-phone-input-2-bic" {
   import React from "react";
 
   export interface CountryData {
